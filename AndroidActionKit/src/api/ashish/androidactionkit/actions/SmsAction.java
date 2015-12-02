@@ -23,7 +23,7 @@ import android.telephony.SmsManager;
  * 
  * <code>
  * 	<ul>	
- * 		    AbstractAction action = new SmsAction();
+ * 		    SmsAction action = new SmsAction();
  * 		<br> Map smsdata = new HashMap();
  * 		<br> data.put("action","type_of_action");
  * 		<br> data.put("number","phone_number");
