@@ -1,12 +1,20 @@
 package api.ashish.androidactionkit.actions;
 
-import java.util.Map;
-
 import android.content.Context;
 import android.os.Vibrator;
 
 /**
- * Action to Vibrate the Device
+ * Action to Send an SMS to a given Number automatically
+ * 
+ * <code>
+ * 	<ul>	
+ * 		    SmsAction action = new SmsAction();
+ * 		<br> Map smsdata = new HashMap();
+ * 		<br> data.put("action","type_of_action");
+ * 		<br> data.put("number","phone_number");
+ * 	 	<br> action.perform(data);
+ * 	</ul>
+ * </code>
  * 
  * @author "Ashish Kalbhor"<ashish.kalbhor@gmail.com>
  * 
@@ -25,30 +33,34 @@ public class VibrateAction
 	private Vibrator vibrator;
 
 
-	
+	/**
+	 * Gets Vibrate System Service to Vibrator object.
+	 * @param context
+	 */
 	public void onCreate(Context context)
 	{
 		this.context = context;
 		vibrator = (Vibrator)context.getSystemService(context.VIBRATOR_SERVICE);
 	}
 
-
-	
-	public void perform(Map<String, Object> data)
+	/**
+	 * Perform the Vibration for given milliseconds
+	 * @param ms
+	 */
+	public void perform(long ms)
 	{
 		if ( null != vibrator )
 		{
-			vibrator.vibrate(2000);
-
+			vibrator.vibrate(ms);
 		}
 	}
 
-
-	
+	/**
+	 * Destroy the Vibrator object.
+	 */
 	public void onDestroy()
 	{
 		vibrator = null;
-
 	}
 
 }

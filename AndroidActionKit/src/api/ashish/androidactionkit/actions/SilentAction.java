@@ -19,12 +19,7 @@ public class SilentAction
 	 * Android Application Context
 	 */
 	private Context context = null;
-	/**
-	 * Audio Manager used to change the ringer volume
-	 */
 	
-	
-
 	public void onCreate(Context context)
 	{
 		this.context = context;		
