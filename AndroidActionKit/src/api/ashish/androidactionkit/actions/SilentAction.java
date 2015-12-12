@@ -20,14 +20,24 @@ public class SilentAction
 	 */
 	private Context context = null;
 	
+	/**
+	 * Store the application context.
+	 * 
+	 * @param context
+	 */
 	public void onCreate(Context context)
 	{
 		this.context = context;		
 	}
 
-
+	/**
+	 * Perform the audio action based on the mapped data that is being sent.
+	 * 
+	 * @param data
+	 */
 	public void perform(Map<String, Object> data)
 	{
+		// TODO Replace Map with simple String.
 		int lastVolume = 0; // Contains info of last volume		
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
 		SharedPreferences.Editor editor = pref.edit();		
@@ -54,9 +64,11 @@ public class SilentAction
 		}	
 	}
 
-
+	/**
+	 * Destroy the Vibrator object.
+	 */
 	public void onDestroy()
 	{
-		
+		// Do nothing for now.
 	}
 }
