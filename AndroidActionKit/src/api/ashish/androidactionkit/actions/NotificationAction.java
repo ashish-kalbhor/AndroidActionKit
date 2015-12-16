@@ -12,25 +12,39 @@ import api.ashish.androidactionkit.MainActivity;
 
 /**
  * 
- * Action which shows notification after each new trigger.
+ * Action which shows notification on device screen.
  * 
  *  @author "Ashish Kalbhor" <ashish.kalbhor@gmail.com>
  */
 
 public class NotificationAction
 {
-
+	/**
+	 * Android Application Context
+	 */
 	private Context context = null;
 
+	/**
+	 * Android Notification Manager
+	 */
 	NotificationManager notifymgr = null;
 
-
+	/**
+	 * Store the application context.
+	 * 
+	 * @param context
+	 */
 	public void onCreate(Context context)
 	{
 		this.context = context;
 		this.notifymgr = (NotificationManager)this.context.getSystemService(Context.NOTIFICATION_SERVICE);
 	}
 
+	/**
+	 * Perform the Notification Action and show the given text.
+	 * 
+	 * @param data
+	 */
 	public void perform(String NotifyData)
 	{
 		String message = NotifyData;
@@ -55,7 +69,9 @@ public class NotificationAction
 
 	}
 
-
+	/**
+	 * Destroy the Notification manager object.
+	 */
 	public void onDestroy()
 	{
 		this.notifymgr = null;
