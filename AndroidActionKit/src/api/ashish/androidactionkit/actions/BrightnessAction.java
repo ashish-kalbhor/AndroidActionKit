@@ -4,6 +4,12 @@ import java.util.Map;
 
 import android.content.Context;
 
+/**
+ * 
+ * Action which changes the device brightness at different levels.
+ * 
+ *  @author "Ashish Kalbhor" <ashish.kalbhor@gmail.com>
+ */
 public class BrightnessAction 
 {
 	/**
