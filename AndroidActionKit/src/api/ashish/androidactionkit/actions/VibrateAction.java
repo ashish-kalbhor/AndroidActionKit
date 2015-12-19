@@ -4,18 +4,21 @@ import android.content.Context;
 import android.os.Vibrator;
 
 /**
- * Action to Send an SMS to a given Number automatically
+ * Action to Vibrate the device for a particular period.
  * 
+ *  
  * <code>
  * 	<ul>	
- * 		    SmsAction action = new SmsAction();
- * 		<br> Map smsdata = new HashMap();
- * 		<br> data.put("action","type_of_action");
- * 		<br> data.put("number","phone_number");
- * 	 	<br> action.perform(data);
+ *		VibrateAction action = new VibrateAction(context);
+ * 		<br>action.perform(2000);
  * 	</ul>
  * </code>
  * 
+ * <br>
+ * <li>
+ * USES-PERMISSION: android.permission.VIBRATE
+ * </li>
+ * <br>
  * @author "Ashish Kalbhor"<ashish.kalbhor@gmail.com>
  * 
  */
@@ -32,12 +35,11 @@ public class VibrateAction
 	 */
 	private Vibrator vibrator;
 
-
 	/**
 	 * Gets Vibrate System Service to Vibrator object.
 	 * @param context
 	 */
-	public void onCreate(Context context)
+	public VibrateAction(Context context)
 	{
 		this.context = context;
 		vibrator = (Vibrator)context.getSystemService(context.VIBRATOR_SERVICE);
