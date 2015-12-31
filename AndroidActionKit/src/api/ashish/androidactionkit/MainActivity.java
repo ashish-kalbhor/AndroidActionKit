@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import api.ashish.androidactionkit.actions.NotificationAction;
 import api.ashish.androidactionkit.actions.SmsAction;
 import api.ashish.androidactionkit.actions.VibrateAction;
 
@@ -25,7 +26,7 @@ public class MainActivity extends Activity
 		Button test = (Button)findViewById(R.id.testButton);	
 		
 		// testVibrate(test, context);
-		testSms(test, context);
+		// testSms(test, context);
 		
 	}
 	
@@ -67,6 +68,25 @@ public class MainActivity extends Activity
 				smsData.put("message", "Testing Library");
 				smsData.put("number", "6176526740");
 				vibe.perform(smsData);
+			}
+		});
+	}
+	
+	/**
+	 * Create Test Notification Action
+	 * @param b
+	 * @param context
+	 */
+	public void testNotify(Button b, Context context)
+	{
+		final NotificationAction notify = new NotificationAction(context);
+				
+		b.setOnClickListener(new OnClickListener() 
+		{			
+			@Override
+			public void onClick(View v) 
+			{
+				notify.perform("Testing Android Application Library");
 			}
 		});
 	}

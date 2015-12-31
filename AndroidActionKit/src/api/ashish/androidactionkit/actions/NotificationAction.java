@@ -31,10 +31,9 @@ public class NotificationAction
 
 	/**
 	 * Store the application context.
-	 * 
 	 * @param context
 	 */
-	public void onCreate(Context context)
+	public NotificationAction(Context context) 
 	{
 		this.context = context;
 		this.notifymgr = (NotificationManager)this.context.getSystemService(Context.NOTIFICATION_SERVICE);
