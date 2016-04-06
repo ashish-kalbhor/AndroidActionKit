@@ -25,17 +25,17 @@ public class BrightnessAction
 	 * 
 	 * @param brightnessData
 	 */
-	public void perform(String brightnessData)
+	public void perform(Map<String, Object> brightnessData)
 	{
 		// TODO Add different levels of Brightness. Gradient.
 		// Change the Brightness
-		//String action = (String)brightnessData.get("action");
-		if ( "HIGH".equals(brightnessData) )
+		String action = (String)brightnessData.get("action");
+		if ( "HIGH".equals(action) )
 		{
 			android.provider.Settings.System.putInt(this.context.getContentResolver(),
 					android.provider.Settings.System.SCREEN_BRIGHTNESS, 100);
 		}
-		else if ( "LOW".equals(brightnessData) )
+		else if ( "LOW".equals(action) )
 		{
 			android.provider.Settings.System.putInt(this.context.getContentResolver(),
 					android.provider.Settings.System.SCREEN_BRIGHTNESS, 10);

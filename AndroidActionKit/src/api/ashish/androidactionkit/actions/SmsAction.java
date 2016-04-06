@@ -41,7 +41,7 @@ public class SmsAction
 	SmsManager smsmgr = null;
 
 	/**
-	 * Gets SMSManager services.
+	 * Gets Vibrate System Service to Vibrator object.
 	 * @param context
 	 */
 	public SmsAction(Context context)
